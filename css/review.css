@@ -1,0 +1,263 @@
+.er_annotation_layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2147483647;
+    pointer-events: none;
+}
+.er_annotation {
+    position: absolute;
+    pointer-events: auto;
+}
+.er_review_indicator {
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 8px;
+    display: block;
+    z-index: 3;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+}
+.er_review_form_wrapper {
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+    position: absolute;
+    left: 1176px;
+    top: 1158px;
+    background: #fff;
+    padding: 10px;
+    z-index: 999;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 6px;
+    min-width: 250px;
+}
+.er_review_form_close {
+    cursor: pointer;
+}
+.er_review_form {
+   display: flex;
+   flex-direction: column;
+   align-items: end;
+   gap: 6px; 
+}
+.er_review_form input {
+    border-radius: 12px;
+}
+.er_review_form button {
+    background-image: linear-gradient(90deg, #FFC917 0%, #FA8A00 100%);
+    border-radius: 60px;
+    color: #fff;
+    border: none;
+    font-weight: 700;
+}
+.er_review_form button:hover {
+    background-image: linear-gradient(180deg, #FA8A00 0%, #FA8A00 100%);
+}
+.er_annotation_number_tag {
+    all: initial;
+    position: absolute;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, .5);
+    color: white;
+    padding: 6px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+    top: -31px;
+    left: -1px;
+}
+.er_annotation {
+    all: initial;
+    position: absolute;
+    z-index: 2;
+    padding: 12px 6px 6px;
+    border-radius: 6px;
+    background-color: #fff;
+    border: 1px solid #cfcfcf;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+    display: flex;
+    min-width: 200px;
+    text-align: start;
+}
+.er_annotation_options_container {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background-color: #fff;
+    border-radius: 60px;
+    height: 24px;
+    width: auto;
+    display: flex;
+    gap: 6px;
+    justify-content: end;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+    align-items: center;
+    padding: 8px;
+}
+.er_annotation_number {
+    font-size: 14px;
+    background-color: gray;
+    border-radius: 100%;
+    width: 16px;
+    height: 16px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: #fff;
+    min-width: 16px;
+}
+.er_annotation_minimized {
+    height: 0;
+    padding: 0;
+}
+.er_annotation_close,
+.er_annotation_edit,
+.er_annotation_minimize,
+.er_annotation_date {
+    cursor: pointer;
+    color: #000;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-weight: 500;
+    line-height: 1rem;
+    align-items: center;
+}
+.er_annotation_clock_icon,
+.er_annotation_edit_icon,
+.er_annotation_minimize_icon,
+.er_annotation_close_icon,
+.er_annotation_plus_icon {
+    width: 14px;
+    height: 14px;
+    display: block;
+}
+.er_annotation_close_form_icon {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+.er_annotation_date_popup {
+    display: none;
+    position: absolute;
+    top: -22px;
+    left: 6px;
+    background-color: #fff;
+    padding: 3px 6px;
+    border-radius: 60px;
+    font-size: 14px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+}
+.er_annotation_date_popup_active {
+    display: block;
+}
+.er_annotation_divider {
+    height: 100%;
+    width: 1px;
+    background-color: #000;
+}
+.er_annotation p {
+    color: #000;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-weight: 500;
+    line-height: 1rem;
+    max-width: 300px;
+    flex-grow: 1;
+    white-space: pre-wrap;
+}
+
+/* Annotation List */
+.er_annotation_list {
+    height: 50vh;
+    display: none; /* Will turn to flex when Easy Review is toggled on */
+    flex-direction: column;
+    position: fixed;
+    right: 0;
+    top: 50%;
+    background-color: #fff;
+    z-index: 5;
+    width: 0;
+    transition: width .5s ease-in-out;
+    transform: translateY(-50%);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+}
+.er_annotation_list_items {
+    overflow-y: scroll;
+    padding: 0 8px; 
+}
+.er_annotation_list_toggle {
+    content: "Open";
+    background-color: #fff;
+    z-index: 5;
+    position: absolute;
+    left: -40px;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    background-size: 25px;
+    background-position: center center;
+    background-repeat:  no-repeat;
+    cursor: pointer;
+    box-shadow: -5px 0 10px -5px rgba(0, 0, 0, .5);
+}
+.er_annotation_list h2 {
+    padding: 12px;
+    font-size: 18px;
+    margin: 0;
+    text-align: center;
+}
+.er_annotation_list_item {
+    border-bottom: 1px solid lightgray;
+}
+.er_annotation_list_item:hover {
+    background-color: lightblue;
+}
+.er_annotation_list_item_link {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: start;
+    text-decoration: none !important;
+    padding: 12px;
+}
+.er_annotation_list_item_close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 16px;
+    height: 16px;
+}
+.er_annotation_list_item_text {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+}
+.er_annotation_list_item_text .er_annotation_list_item_review {
+    margin: 0;
+    color: #000;
+    font-size: 12px;
+    font-weight: 500;
+}
+.er_annotation_list_item_text .er_annotation_list_item_date {
+    font-size: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .25);
+    padding: 0 4px;
+    border-radius: 90px;
+    margin: 6px 0 0;
+    color: #000;
+    opacity: .4;
+}
