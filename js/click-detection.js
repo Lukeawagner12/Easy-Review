@@ -463,7 +463,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
         function buildAnnotationList() {
-            annotationListItems.querySelectorAll(".er_annotation_list_item").forEach(item => {
+            annotationListItems?.querySelectorAll(".er_annotation_list_item").forEach(item => {
                 item.remove();
             });
 
@@ -519,7 +519,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 await deleteAnnotation(data.id);
             });
 
-            annotationListItems.appendChild(listAnnotation);
+            annotationListItems?.appendChild(listAnnotation);
         }
 
         function createEditInputForm(oldAnnotation) {

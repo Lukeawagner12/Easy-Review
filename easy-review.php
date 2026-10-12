@@ -308,9 +308,17 @@ function easy_review_general_color_field() {
 // }
 
 // Create annotation list
+// wp_body_open isn't called by every theme, so fall back to wp_footer
 add_action( 'wp_body_open', 'annotation_list' );
+add_action( 'wp_footer', 'annotation_list' );
 
 function annotation_list() {
+    static $rendered = false;
+    if ( $rendered ) {
+        return;
+    }
+    $rendered = true;
+
     echo '<div class="er_annotation_list">';
     echo '<div class="er_annotation_list_toggle list-closed" style="background-image: url(' . plugins_url('/images/annotate-svgrepo-com.svg', __FILE__) . ');"></div>';
     echo '<h2>Annotation List</h2>';
